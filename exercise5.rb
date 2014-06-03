@@ -6,4 +6,4 @@ def celsius_convert(f)
  return ((f - 32) * 5/9)
 end
 
-puts celsius_convert(f)
+puts "That would be #{celsius_convert(f)} degrees Celsius."
