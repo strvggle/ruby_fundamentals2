@@ -1,7 +1,6 @@
 grocery_list = ["tuna", "chicken", "protein", "eggs"]
 count = 0
 grocery_list << "rice"
-
 while count < 5
 	puts "* #{grocery_list[count]}"
 	count +=1
@@ -16,4 +15,11 @@ grocery_list.include?("bananas")
 		puts "You need to pick up bananas!"
 	end
 
-print "#{grocery_list[1]}"
+puts grocery_list[1]
+
+while count < 5
+	grocery_list.sort
+	grocery_list.join("* ")
+	puts "#{grocery_list[count]}"
+	count +=1
+end
