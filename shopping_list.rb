@@ -1,25 +1,26 @@
 grocery_list = ["tuna", "chicken", "protein", "eggs"]
-count = 0
-grocery_list << "rice"
-while count < 5
-	puts "* #{grocery_list[count]}"
-	count +=1
-end
 
-puts "Total items to grab: #{grocery_list.length}"
-
-grocery_list.include?("bananas")
-	if true
-		puts "You don't need to pick up bananas!"
-	else
-		puts "You need to pick up bananas!"
+def print_list(list)
+	list.each do |item|
+		puts "* #{item}"
 	end
-
-puts grocery_list[1]
-
-while count < 5
-	grocery_list.sort
-	grocery_list.join("* ")
-	puts "#{grocery_list[count]}"
-	count +=1
 end
+
+print_list(grocery_list)
+grocery_list << "rice"
+print_list(grocery_list)
+
+total = grocery_list.count
+puts "You've got #{total} things to pick up tonight!"
+
+if grocery_list.include?("bananas")
+	puts "Get bananas!"
+else
+	puts "Don't worry about bananas!"
+end
+
+puts grocery_list.fetch(1)
+print_list(grocery_list.sort)
+grocery_list.delete("salmon")
+
+print_list(grocery_list)
